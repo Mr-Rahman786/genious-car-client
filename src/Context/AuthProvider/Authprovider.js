@@ -11,17 +11,20 @@ const Authprovider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     const creatUser = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const login = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password);
     }
 
     useEffect(() => {
      const unsubsCribe=   onAuthStateChanged(auth, currentUser => {
             // console.log(currentUser)
-            setUser(currentUser);
+         setUser(currentUser);
+         setLoading(false)
      })
         return () => {
             return unsubsCribe();
