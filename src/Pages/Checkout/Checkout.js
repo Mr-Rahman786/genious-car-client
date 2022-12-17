@@ -29,7 +29,7 @@ const Checkout = () => {
         // else {
 
         // }
-        fetch('http://localhost:5000/orders', {
+        fetch('https://genious-car-server-pied.vercel.app/orders', {
             method: 'POST',
             headers: {
                 'content-type':'application/json'

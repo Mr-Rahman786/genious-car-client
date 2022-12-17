@@ -4,7 +4,7 @@ const OrderMenia = ({ order, handleDelete, handleStatusUpdate }) => {
     const { _id, service, serviceName, price,status, customer, email, phone, massage } = order;
     const [orderService, setOrderService] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${service}`)
+        fetch(`https://genious-car-server-pied.vercel.app/services/${service}`)
             .then(res => res.json())
             .then(data => {
                 setOrderService(data)

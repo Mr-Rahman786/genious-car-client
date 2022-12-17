@@ -8,7 +8,7 @@ const Orders = () => {
     
     
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?email=${user?.email}`)
+        fetch(`https://genious-car-server-pied.vercel.app/orders?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setOrder(data))
     }, [user?.email])
@@ -16,7 +16,7 @@ const Orders = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are You Sure,you want to cancel this order')
         if (proceed) {
-            fetch(`http://localhost:5000/orders/${id}`, {
+            fetch(`https://genious-car-server-pied.vercel.app/orders/${id}`, {
                 method: 'DELETE',
 
             })
@@ -33,7 +33,7 @@ const Orders = () => {
     }
 
     const handleStatusUpdate = id => {
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://genious-car-server-pied.vercel.app/orders/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type':'application/json'
